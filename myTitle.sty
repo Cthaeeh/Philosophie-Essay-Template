@@ -1,0 +1,36 @@
+
+\ProvidesPackage{myTitle}[test]
+
+\newcommand*{\semester}[1]{\gdef\@semester{#1}%
+}
+\newcommand*{\@semester}{\texttt{\string\semester} currently
+not set. Please fix this.}
+
+\newcommand*{\dozent}[1]{\gdef\@dozent{#1}%
+}
+\newcommand*{\@dozent}{\texttt{\string\dozent} currently
+not set. Please fix this.}
+
+\newcommand*{\seminar}[1]{\gdef\@seminar{#1}%
+}
+\newcommand*{\@seminar}{\texttt{\string\seminar} currently
+not set. Please fix this.}
+
+
+\renewcommand*{\maketitle}{%
+
+{\centering
+{\scshape\large\@semester\unskip\strut}
+{\large\ - \@seminar\unskip\strut\par}
+{\large\ Dozent*in: \@dozent\unskip\strut\par}
+\vspace{1cm}
+
+{\Large\bfseries\@title\unskip\strut\par}
+{\Large\itshape\@author\unskip\strut\par}
+{\large \@date\par}
+\vspace{1cm}
+}
+
+
+}
+\endinput
